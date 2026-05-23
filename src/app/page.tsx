@@ -19,22 +19,46 @@ const skills = [
 
 const projects = [
   {
-    name: "OpenClaw Dashboard",
-    description: "Real-time monitoring system for OpenClaw with React + Express",
-    tech: ["React", "TypeScript", "Express"],
+    name: "Trading Platform",
+    description: "股票分析平台 - 股票查詢、K線圖技術分析、策略回測、價格預測",
+    tech: ["Next.js", "React", "Recharts", "yfinance"],
     color: "#3B82F6",
   },
   {
-    name: "AI Image Generator",
-    description: "ComfyUI-based image generation platform with custom workflows",
-    tech: ["ComfyUI", "Python", "React"],
+    name: "Minervini-Trading",
+    description: "智能選股系統 - 基於Mark Minervini趨勢模板的量化選股系統",
+    tech: ["Python", "yfinance"],
+    color: "#10B981",
+  },
+  {
+    name: "Futures-Signals",
+    description: "期貨期權信號系統 - 每日期貨交易信號、選擇權策略分析",
+    tech: ["Python", "期貨API"],
+    color: "#F59E0B",
+  },
+  {
+    name: "OpenClaw-Dashboard",
+    description: "系統監控面板 - 即時系統狀態、Sessions追蹤、硬件監控",
+    tech: ["React", "Express", "OpenClaw CLI"],
     color: "#8B5CF6",
   },
   {
-    name: "Trading Signal System",
-    description: "Minervini-based stock screening with real-time Telegram alerts",
-    tech: ["Next.js", "Python", "Telegram API"],
-    color: "#10B981",
+    name: "Psy-Profile",
+    description: "心理側寫與風險識別 - 心理側寫分析、風險識別評估",
+    tech: ["React", "Next.js"],
+    color: "#EC4899",
+  },
+  {
+    name: "Webchat",
+    description: "智能客服系統 - AI公司客戶服務、RAG向量搜尋、對話管理",
+    tech: ["Node.js", "AI API"],
+    color: "#06B6D4",
+  },
+  {
+    name: "ZImage-Generator",
+    description: "圖像生成工具 - 文字轉圖像生成、多風格支援",
+    tech: ["React", "ComfyUI", "Z-Image Turbo"],
+    color: "#EF4444",
   },
 ];
 
@@ -97,7 +121,7 @@ function SkillCard({ skill, delay }: { skill: typeof skills[0]; delay: number })
   );
 }
 
-function ProjectCard({ project, delay }: { project: typeof projects[0]; delay: number }) {
+function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
@@ -106,17 +130,17 @@ function ProjectCard({ project, delay }: { project: typeof projects[0]; delay: n
       className={`group bg-white p-8 transition-all duration-500 hover:shadow-xl ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div 
         className="h-32 border-b-2 border-stone-100 pb-6 mb-6 flex items-center justify-center transition-all duration-300 group-hover:border-current"
         style={{ borderColor: isVisible ? project.color : "rgb(226 232 240)" }}
       >
         <span 
-          className="text-4xl transition-all duration-300"
-          style={{ color: isVisible ? "rgb(161, 161, 170)" : "rgb(203 213 225)" }}
+          className="text-4xl font-bold text-stone-300 transition-all duration-300"
+          style={{ color: isVisible ? "rgb(203 213 225)" : "rgb(226 232 240)" }}
         >
-          [{String(delay / 100).padStart(2, "0")}]
+          {String(index + 1).padStart(2, '0')}
         </span>
       </div>
       <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors">
@@ -148,7 +172,7 @@ export default function Home() {
       setIsScrolled(window.scrollY > 50);
       
       // Update active section based on scroll position
-      const sections = ["home", "skills", "projects", "contact"];
+      const sections = ["home", "projects", "contact"];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
         if (element && window.scrollY >= element.offsetTop - 200) {
@@ -192,7 +216,6 @@ export default function Home() {
             <div className="flex gap-8 text-sm tracking-wide">
               {[
                 { id: "home", label: "Home" },
-                { id: "skills", label: "Skills" },
                 { id: "projects", label: "Projects" },
                 { id: "contact", label: "Contact" },
               ].map((item) => (
@@ -250,26 +273,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section id="skills" className="py-32 px-8 bg-white relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-white pointer-events-none" />
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <p className="text-sm tracking-widest text-blue-600 mb-2 uppercase font-medium">
-              Expertise
-            </p>
-            <h2 className="text-4xl font-bold tracking-tight text-stone-800">Technical Skills</h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-4 rounded-full" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {skills.map((skill, index) => (
-              <SkillCard key={skill.name} skill={skill} delay={index * 100} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <section id="projects" className="py-32 px-8 bg-gradient-to-b from-stone-50 to-white">
         <div className="max-w-5xl mx-auto">
@@ -283,7 +286,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={project.name} project={project} delay={index * 150} />
+              <ProjectCard key={project.name} project={project} index={index} />
             ))}
           </div>
         </div>
