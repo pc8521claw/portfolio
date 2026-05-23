@@ -123,6 +123,7 @@ function SkillCard({ skill, delay }: { skill: typeof skills[0]; delay: number })
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const { ref, isVisible } = useScrollReveal();
+  const imageFileName = `project-${String(index + 1).padStart(2, '0')}-${project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
   return (
     <div
@@ -133,15 +134,22 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       style={{ transitionDelay: `${index * 150}ms` }}
     >
       <div 
-        className="h-32 border-b-2 border-stone-100 pb-6 mb-6 flex items-center justify-center transition-all duration-300 group-hover:border-current"
+        className="h-96 border-b-2 border-stone-100 pb-4 mb-6 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-current"
         style={{ borderColor: isVisible ? project.color : "rgb(226 232 240)" }}
       >
-        <span 
-          className="text-4xl font-bold text-stone-300 transition-all duration-300"
-          style={{ color: isVisible ? "rgb(203 213 225)" : "rgb(226 232 240)" }}
-        >
-          {String(index + 1).padStart(2, '0')}
-        </span>
+        <img 
+          src={`/images/${imageFileName}.jpg`}
+          alt={project.name}
+          className="w-full h-full object-contain rounded transition-all duration-300"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            if (target.src.endsWith('.jpg')) {
+              target.src = `/images/${imageFileName}.png`;
+            } else {
+              target.style.display = 'none';
+            }
+          }}
+        />
       </div>
       <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors">
         {project.name}

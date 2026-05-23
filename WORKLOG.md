@@ -40,3 +40,7 @@
 
 **部署：**
 - 本地運行：http://192.168.31.249:3010
+
+### Portfolio Email 更新
+- Email: pc8521@example.com → rlamwp@gmail.com
+- 狀態: 已更新並推送 GitHub 觸發 Vercel 自動部署
