@@ -310,7 +310,7 @@ export default function Home() {
             Drop me a message and let's create something amazing.
           </p>
           <a
-            href="mailto:pc8521@example.com"
+            href="mailto:rlamwp@gmail.com"
             className="inline-flex items-center gap-2 px-10 py-4 border-2 border-blue-500 text-blue-400 text-sm tracking-wider font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25"
           >
             <span>✉️</span> GET IN TOUCH
