@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { translations, type Language } from "@/i18n/translations";
 
 const skills = [
   { name: "React", category: "Frontend", level: 90, icon: "⚛️", color: "#61DAFB" },
@@ -20,43 +21,36 @@ const skills = [
 const projects = [
   {
     name: "Trading Platform",
-    description: "股票分析平台 - 股票查詢、K線圖技術分析、策略回測、價格預測",
     tech: ["Next.js", "React", "Recharts", "yfinance"],
     color: "#3B82F6",
   },
   {
     name: "Minervini-Trading",
-    description: "智能選股系統 - 基於Mark Minervini趨勢模板的量化選股系統",
     tech: ["Python", "yfinance"],
     color: "#10B981",
   },
   {
     name: "Futures-Signals",
-    description: "期貨期權信號系統 - 每日期貨交易信號、選擇權策略分析",
-    tech: ["Python", "期貨API"],
+    tech: ["Python", "yfinance"],
     color: "#F59E0B",
   },
   {
     name: "OpenClaw-Dashboard",
-    description: "系統監控面板 - 即時系統狀態、Sessions追蹤、硬件監控",
     tech: ["React", "Express", "OpenClaw CLI"],
     color: "#8B5CF6",
   },
   {
     name: "Psy-Profile",
-    description: "心理側寫與風險識別 - 心理側寫分析、風險識別評估",
     tech: ["React", "Next.js"],
     color: "#EC4899",
   },
   {
     name: "Webchat",
-    description: "智能客服系統 - AI公司客戶服務、RAG向量搜尋、對話管理",
     tech: ["Node.js", "AI API"],
     color: "#06B6D4",
   },
   {
     name: "ZImage-Generator",
-    description: "圖像生成工具 - 文字轉圖像生成、多風格支援",
     tech: ["React", "ComfyUI", "Z-Image Turbo"],
     color: "#EF4444",
   },
@@ -121,8 +115,11 @@ function SkillCard({ skill, delay }: { skill: typeof skills[0]; delay: number })
   );
 }
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({ project, index, lang }: { project: typeof projects[0]; index: number; lang: Language }) {
   const { ref, isVisible } = useScrollReveal();
+  const t = translations[lang].projectDescriptions;
+  const description = t[project.name as keyof typeof t] || project.name;
+  
   const imageFileName = `project-${String(index + 1).padStart(2, '0')}-${project.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
   return (
@@ -155,7 +152,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         {project.name}
       </h3>
       <p className="text-stone-500 text-sm mb-4 leading-relaxed">
-        {project.description}
+        {description}
       </p>
       <div className="flex flex-wrap gap-2">
         {project.tech.map((t) => (
@@ -172,8 +169,24 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 }
 
 export default function Home() {
+  const [lang, setLang] = useState<Language>("en");
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const t = translations[lang];
+
+  useEffect(() => {
+    // Check localStorage for saved language preference
+    const savedLang = localStorage.getItem("portfolio-lang") as Language;
+    if (savedLang && (savedLang === "en" || savedLang === "zh")) {
+      setLang(savedLang);
+    }
+  }, []);
+
+  const toggleLang = (newLang: Language) => {
+    setLang(newLang);
+    localStorage.setItem("portfolio-lang", newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -221,25 +234,52 @@ export default function Home() {
             >
               <span className="text-blue-600">R</span>L.
             </button>
-            <div className="flex gap-8 text-sm tracking-wide">
-              {[
-                { id: "home", label: "Home" },
-                { id: "projects", label: "Projects" },
-                { id: "contact", label: "Contact" },
-              ].map((item) => (
+            
+            <div className="flex items-center gap-6">
+              <div className="flex gap-6 text-sm tracking-wide">
+                {[
+                  { id: "home", label: t.nav.home },
+                  { id: "projects", label: t.nav.projects },
+                  { id: "contact", label: t.nav.contact },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`relative hover:text-blue-600 transition-colors ${
+                      activeSection === item.id ? "text-blue-600" : "text-stone-500"
+                    }`}
+                  >
+                    {item.label}
+                    {activeSection === item.id && (
+                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600 rounded-full" />
+                    )}
+                  </button>
+                ))}
+              </div>
+              
+              {/* Language Switcher */}
+              <div className="flex items-center gap-1 bg-stone-100 rounded-lg p-1">
                 <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`capitalize relative hover:text-blue-600 transition-colors ${
-                    activeSection === item.id ? "text-blue-600" : "text-stone-500"
+                  onClick={() => toggleLang("en")}
+                  className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
+                    lang === "en" 
+                      ? "bg-white text-blue-600 shadow-sm" 
+                      : "text-stone-500 hover:text-stone-700"
                   }`}
                 >
-                  {item.label}
-                  {activeSection === item.id && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600 rounded-full" />
-                  )}
+                  EN
                 </button>
-              ))}
+                <button
+                  onClick={() => toggleLang("zh")}
+                  className={`px-3 py-1 text-xs font-medium rounded-md transition-all ${
+                    lang === "zh" 
+                      ? "bg-white text-blue-600 shadow-sm" 
+                      : "text-stone-500 hover:text-stone-700"
+                  }`}
+                >
+                  中文
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -255,27 +295,26 @@ export default function Home() {
         
         <div className="text-center max-w-2xl relative z-10">
           <p className="text-sm tracking-widest text-blue-600 mb-4 uppercase font-medium animate-pulse">
-            Full-Stack Developer
+            {t.hero.role}
           </p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-gradient-to-r from-stone-800 via-blue-600 to-stone-600 bg-clip-text text-transparent">
             Raymond Lam
           </h1>
           <p className="text-lg text-stone-500 font-light leading-relaxed mb-12">
-            Building elegant web solutions with modern technologies.
-            Focused on clean code and intuitive user experiences.
+            {t.hero.subtitle}
           </p>
           <div className="flex justify-center gap-6">
             <button
               onClick={() => scrollToSection("projects")}
               className="px-8 py-3 bg-blue-600 text-white text-sm tracking-wider font-medium rounded-lg hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-200 transition-all hover:-translate-y-0.5"
             >
-              VIEW WORK
+              {t.hero.viewWork}
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="px-8 py-3 border-2 border-stone-300 text-stone-700 text-sm tracking-wider font-medium rounded-lg hover:border-blue-400 hover:text-blue-600 transition-all hover:-translate-y-0.5"
             >
-              CONTACT
+              {t.hero.contact}
             </button>
           </div>
         </div>
@@ -286,15 +325,15 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-20">
             <p className="text-sm tracking-widest text-blue-600 mb-2 uppercase font-medium">
-              Portfolio
+              {t.projects.title}
             </p>
-            <h2 className="text-4xl font-bold tracking-tight text-stone-800">Selected Work</h2>
+            <h2 className="text-4xl font-bold tracking-tight text-stone-800">{t.projects.selectedWork}</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mt-4 rounded-full" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={project.name} project={project} index={index} />
+              <ProjectCard key={project.name} project={project} index={index} lang={lang} />
             ))}
           </div>
         </div>
@@ -310,18 +349,17 @@ export default function Home() {
         
         <div className="max-w-2xl mx-auto text-center relative z-10">
           <p className="text-sm tracking-widest text-blue-400 mb-2 uppercase font-medium">
-            Get in Touch
+            {t.contact.getInTouch}
           </p>
-          <h2 className="text-4xl font-bold tracking-tight mb-6">Let's Work Together</h2>
+          <h2 className="text-4xl font-bold tracking-tight mb-6">{t.contact.letsWork}</h2>
           <p className="text-stone-400 mb-12 leading-relaxed">
-            Have a project in mind? I'd love to hear about it.
-            Drop me a message and let's create something amazing.
+            {t.contact.description}
           </p>
           <a
             href="mailto:rlamwp@gmail.com"
             className="inline-flex items-center gap-2 px-10 py-4 border-2 border-blue-500 text-blue-400 text-sm tracking-wider font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25"
           >
-            <span>✉️</span> GET IN TOUCH
+            <span>✉️</span> {t.contact.getInTouchBtn}
           </a>
         </div>
       </section>
@@ -329,7 +367,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-8 px-8 bg-stone-900 border-t border-stone-800">
         <div className="max-w-5xl mx-auto flex justify-between items-center text-sm text-stone-500">
-          <p>© {new Date().getFullYear()} Raymond Lam. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Raymond Lam. {t.footer.rights}</p>
           <div className="flex gap-6">
             <a 
               href="https://github.com/pc8521" 
@@ -337,7 +375,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="hover:text-white transition-colors flex items-center gap-1"
             >
-              <span>🐙</span> GitHub
+              <span>🐙</span> {t.footer.github}
             </a>
             <a 
               href="https://linkedin.com/in/pc8521" 
@@ -345,7 +383,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="hover:text-white transition-colors flex items-center gap-1"
             >
-              <span>💼</span> LinkedIn
+              <span>💼</span> {t.footer.linkedin}
             </a>
           </div>
         </div>
