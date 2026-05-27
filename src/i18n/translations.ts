@@ -48,13 +48,13 @@ export const translations = {
     
     // Project descriptions
     projectDescriptions: {
-      "Trading Platform": "Stock analysis platform - Stock query, candlestick charts, technical analysis, strategy backtesting, price prediction",
-      "Minervini-Trading": "Intelligent stock screening system - Quantitative trading based on Mark Minervini trend template",
-      "Futures-Signals": "Futures & options signal system - Daily trading signals, options strategy analysis",
-      "OpenClaw-Dashboard": "System monitoring dashboard - Real-time system status, session tracking, hardware monitoring",
-      "Psy-Profile": "Psychological profiling & risk identification - Psychological analysis, risk assessment",
-      "Webchat": "AI customer service system - Corporate customer service, RAG vector search, conversation management",
-      "ZImage-Generator": "Image generation tool - Text-to-image generation, multiple style support",
+      "Trading Platform": "Stock analysis platform featuring real-time quotes, candlestick charts, technical indicators (MA/RSI/MACD/Bollinger), backtesting for 5 strategies, and multi-model price prediction (Linear Regression, Mean Reversion, Momentum, Price Channel). Includes HK stock search with popular stocks quick access.",
+      "Minervini-Trading": "Intelligent stock screening system based on Mark Minervini's trend template. Quantitative analysis identifies stocks with strong price momentum, earnings growth, and technical breakout patterns. Designed for swing trading opportunities.",
+      "Futures-Signals": "Daily futures and options trading signal system. Provides trend analysis, options strategy recommendations, and risk assessment. Automated signal generation for futures markets.",
+      "OpenClaw-Dashboard": "Real-time system monitoring dashboard for OpenClaw AI assistant. Tracks active sessions, token usage, cron jobs, and hardware metrics (CPU/RAM/disk). Built with React and Express.",
+      "Psy-Profile": "Psychological profiling and risk identification system. Analyzes personality traits, decision-making patterns, and risk tolerance. Useful for understanding behavioral tendencies in trading and investments.",
+      "Webchat": "AI-powered customer service system with RAG vector search capabilities. Integrates knowledge base for accurate responses, manages conversation history, and supports corporate customer service workflows.",
+      "ZImage-Generator": "AI image generation tool powered by ComfyUI and Z-Image Turbo model. Text-to-image generation with multiple style presets. Optimized workflow for rapid image creation and iteration.",
     },
   },
   
@@ -107,13 +107,13 @@ export const translations = {
     
     // Project descriptions
     projectDescriptions: {
-      "Trading Platform": "股票分析平台 - 股票查詢、K線圖技術分析、策略回測、價格預測",
-      "Minervini-Trading": "智能選股系統 - 基於Mark Minervini趨勢模板的量化選股系統",
-      "Futures-Signals": "期貨期權信號系統 - 每日期貨交易信號、選擇權策略分析",
-      "OpenClaw-Dashboard": "系統監控面板 - 即時系統狀態、Sessions追蹤、硬件監控",
-      "Psy-Profile": "心理側寫與風險識別 - 心理側寫分析、風險識別評估",
-      "Webchat": "智能客服系統 - AI公司客戶服務、RAG向量搜尋、對話管理",
-      "ZImage-Generator": "圖像生成工具 - 文字轉圖像生成、多風格支援",
+      "Trading Platform": "股票分析平台 - 實時報價、K線圖、技術指標（MA/RSI/MACD/布林帶）、5種策略回測、以及多模型價格預測（線性回歸、均值回歸、動量、價格通道）。包含港股搜索功能。",
+      "Minervini-Trading": "智能選股系統 - 基於 Mark Minervini 趨勢模板，識別強勁股價動量、盈利增長和技術突破形態的股票。專為波段交易設計。",
+      "Futures-Signals": "期貨期權每日交易信號系統 - 提供趨勢分析、選擇權策略建議和風險評估。自動化期貨市場信號生成。",
+      "OpenClaw-Dashboard": "OpenClaw AI 助手即時系統監控面板 - 追蹤活躍 Sessions、Token 使用量、Cron Jobs、以及硬件監控（CPU/記憶體/磁盤）。使用 React 和 Express 構建。",
+      "Psy-Profile": "心理側寫與風險識別系統 - 分析人格特徵、決策模式和風險承受範圍。適用於理解和評估交易及投資行為傾向。",
+      "Webchat": "AI 智能客服系統 - 具備 RAG 向量搜尋能力，整合知識庫提供準確回覆，管理對話歷史，支援企業客戶服務流程。",
+      "ZImage-Generator": "AI 圖像生成工具 - 由 ComfyUI 和 Z-Image Turbo 模型驅動的文字轉圖像生成，支援多種風格預設，優化工作流程以實現快速圖像創作。",
     },
   },
 };
