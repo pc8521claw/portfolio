@@ -151,7 +151,7 @@ function ProjectCard({ project, index, lang }: { project: typeof projects[0]; in
       <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors">
         {project.name}
       </h3>
-      <p className="text-stone-500 text-sm mb-4 leading-relaxed">
+      <p className="text-stone-500 text-sm mb-4 leading-relaxed whitespace-pre-line">
         {description}
       </p>
       <div className="flex flex-wrap gap-2">
