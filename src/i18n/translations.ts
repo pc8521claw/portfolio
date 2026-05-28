@@ -43,7 +43,6 @@ export const translations = {
     footer: {
       rights: "All rights reserved.",
       github: "GitHub",
-      linkedin: "LinkedIn",
     },
     
     // Project descriptions
@@ -102,7 +101,6 @@ export const translations = {
     footer: {
       rights: "版權所有。",
       github: "GitHub",
-      linkedin: "LinkedIn",
     },
     
     // Project descriptions

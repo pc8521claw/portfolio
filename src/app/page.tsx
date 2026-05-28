@@ -370,20 +370,12 @@ export default function Home() {
           <p>© {new Date().getFullYear()} Raymond Lam. {t.footer.rights}</p>
           <div className="flex gap-6">
             <a 
-              href="https://github.com/pc8521" 
+              href="https://github.com/pc8521claw" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-white transition-colors flex items-center gap-1"
             >
               <span>🐙</span> {t.footer.github}
-            </a>
-            <a 
-              href="https://linkedin.com/in/pc8521" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors flex items-center gap-1"
-            >
-              <span>💼</span> {t.footer.linkedin}
             </a>
           </div>
         </div>
