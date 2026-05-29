@@ -148,8 +148,19 @@ function ProjectCard({ project, index, lang }: { project: typeof projects[0]; in
           }}
         />
       </div>
-      <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors">
+      <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors flex items-center gap-2">
         {project.name}
+        {project.name === "Trading Platform" && (
+          <a
+            href="https://trading-platform-six-kappa.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            🌐 示範
+          </a>
+        )}
       </h3>
       <p className="text-stone-500 text-sm mb-4 leading-relaxed whitespace-pre-line">
         {description}
