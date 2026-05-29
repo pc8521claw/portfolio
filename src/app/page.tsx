@@ -158,7 +158,7 @@ function ProjectCard({ project, index, lang }: { project: typeof projects[0]; in
             className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full hover:bg-blue-600 hover:text-white transition-colors"
             onClick={(e) => e.stopPropagation()}
           >
-            🌐 示範
+            🌐 Demo 示範
           </a>
         )}
       </h3>
