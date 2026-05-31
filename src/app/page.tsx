@@ -366,20 +366,22 @@ export default function Home() {
           <p className="text-stone-400 mb-12 leading-relaxed">
             {t.contact.description}
           </p>
-          <a
-            href="mailto:rlamwp@gmail.com"
-            className="inline-flex items-center gap-2 px-10 py-4 border-2 border-blue-500 text-blue-400 text-sm tracking-wider font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25 min-w-[140px] justify-center"
-          >
-            <span>✉️</span> Email
-          </a>
-          <a
-            href="https://wa.me/85294215788"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-10 py-4 border-2 border-green-500 text-green-400 text-sm tracking-wider font-medium rounded-lg hover:bg-green-500 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-green-500/25 min-w-[140px] justify-center"
-          >
-            <span>💬</span> WhatsApp
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="mailto:rlamwp@gmail.com"
+              className="inline-flex items-center gap-2 px-10 py-4 border-2 border-blue-500 text-blue-400 text-sm tracking-wider font-medium rounded-lg hover:bg-blue-500 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/25 w-full sm:w-auto sm:min-w-[160px] justify-center"
+            >
+              <span>✉️</span> Email
+            </a>
+            <a
+              href="https://wa.me/85294215788"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-10 py-4 border-2 border-green-500 text-green-400 text-sm tracking-wider font-medium rounded-lg hover:bg-green-500 hover:text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-green-500/25 w-full sm:w-auto sm:min-w-[160px] justify-center"
+            >
+              <span>💬</span> WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 
