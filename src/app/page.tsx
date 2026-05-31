@@ -381,7 +381,6 @@ export default function Home() {
             <span>💬</span> WhatsApp
           </a>
         </div>
-        </div>
       </section>
 
       {/* Footer */}
