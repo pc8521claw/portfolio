@@ -54,6 +54,11 @@ const projects = [
     tech: ["React", "ComfyUI", "Z-Image Turbo"],
     color: "#EF4444",
   },
+  {
+    name: "Mind Notes",
+    tech: ["React", "Express", "better-sqlite3", "Ollama"],
+    color: "#8B5CF6",
+  },
 ];
 
 function useScrollReveal() {
