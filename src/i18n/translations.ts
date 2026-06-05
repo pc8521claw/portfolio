@@ -48,7 +48,7 @@ export const translations = {
     // Project descriptions
     projectDescriptions: {
       "Trading Platform": "• Real-time HK/US stock quotes\n• Candlestick charts with technical indicators\n• 5 strategy backtests (MA, RSI, MACD, Bollinger, Momentum)\n• Multi-model price prediction\n• HK stock search",
-      "Mind Notes": "• Local AI chat integrated with Ollama\n• FTS5 full-text search engine\n• Smart notes with tag-based organization\n• Auto knowledge base builder\n• SQLite persistence with WAL protection\n• iOS Safari optimized",
+      "Mind Notes": "• Local LLM chat with Ollama (privacy-first)\n• Smart notes system with tag categorization\n• LLM-powered auto knowledge base builder\n• FTS5 full-text search with trigram Chinese support\n• SQLite persistence with WAL protection\n• iOS Safari optimized",
       "Minervini-Trading": "• Mark Minervini trend template screening\n• Price momentum analysis\n• Earnings growth identification\n• Technical breakout detection",
       "Futures-Signals": "• Daily futures trading signals\n• Options strategy recommendations\n• Trend analysis\n• Automated signal generation",
       "OpenClaw-Dashboard": "• Real-time session tracking\n• Token usage statistics\n• Cron jobs management\n• Hardware monitoring (CPU/RAM/disk)",
@@ -107,7 +107,7 @@ export const translations = {
     // Project descriptions
     projectDescriptions: {
       "Trading Platform": "• 實時港股/美股報價\n• K線圖技術指標\n• 5種策略回測（MA、RSI、MACD、布林帶、動量）\n• 多模型價格預測\n• 港股搜索",
-      "Mind Notes": "• 本地 AI 對話（Ollama 整合）\n• FTS5 全文搜尋引擎\n• 智能筆記 + 標籤分類\n• 自動知識庫建立\n• SQLite WAL 持久化\n• iOS Safari 優化",
+      "Mind Notes": "• 本地 LLM 對話（Ollama，私隱保障）\n• 智能筆記系統（標籤分類）\n• LLM 自動整理知識庫\n• FTS5 全文搜尋（trigram 支援中文）\n• SQLite 持久化（WAL 模式）\n• iOS Safari 優化",
       "Minervini-Trading": "• Mark Minervini 趨勢模板篩選\n• 股價動量分析\n• 盈利增長識別\n• 技術突破形態檢測",
       "Futures-Signals": "• 每日期貨交易信號\n• 選擇權策略建議\n• 趨勢分析\n• 自動化信號生成",
       "OpenClaw-Dashboard": "• 即時 Sessions 追蹤\n• Token 使用量統計\n• Cron Jobs 管理\n• 硬件監控（CPU/記憶體/磁盤）",
