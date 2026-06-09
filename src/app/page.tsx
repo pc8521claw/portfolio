@@ -316,7 +316,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-gradient-to-r from-stone-800 via-blue-600 to-stone-600 bg-clip-text text-transparent">
             Raymond Lam
           </h1>
-          <p className="text-lg text-stone-500 font-light leading-relaxed mb-12">
+          <p className="text-lg text-stone-500 font-light leading-relaxed mb-12 whitespace-pre-line">
             {t.hero.subtitle}
           </p>
           <div className="flex justify-center gap-6">
