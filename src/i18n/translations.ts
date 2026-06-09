@@ -9,8 +9,8 @@ export const translations = {
     
     // Hero
     hero: {
-      role: "Full-Stack Developer",
-      subtitle: "Building elegant web solutions with modern technologies. Focused on clean code and intuitive user experiences.",
+      role: "Vibe Coding Creator",
+      subtitle: "I believe we're in a new era where shipping solutions matters more than memorizing syntax. AI is my co-pilot. Using AI-assisted development, I've built and deployed multiple production apps from scratch.",
       viewWork: "VIEW WORK",
       contact: "CONTACT",
     },
@@ -68,8 +68,8 @@ export const translations = {
     
     // Hero
     hero: {
-      role: "全端開發者",
-      subtitle: "以現代技術構建優雅的網頁解決方案。專注於簡潔程式碼和直觀的用戶體驗。",
+      role: "Vibe Coding 創作者",
+      subtitle: "我相信在 AI 時代，技術門檻不再是阻礙——真正的價值在於發現問題、設計方案、並把想法變成可用的產品。透過 AI 協作，我從零開始建立了多個完整應用。",
       viewWork: "查看作品",
       contact: "聯絡我",
     },
