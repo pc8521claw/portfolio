@@ -10,13 +10,12 @@ export const translations = {
     // Hero
     hero: {
       role: "Vibe Coding Creator",
-      tagline: "I believe we're in a new era where the ability to identify problems and ship solutions matters more than memorizing syntax. AI is my co-pilot.",
-      bullets: [
-        "Built and deployed multiple production apps from scratch with AI-assisted development",
-        "Stock analysis platform, AI chat assistants, automated trading systems, and more",
-        "Not a traditional full-stack engineer — but I move fast, validate quickly, and ship things that work",
+      paragraphs: [
+        "I believe we're in a new era where the ability to identify problems and ship solutions matters more than memorizing syntax. AI is my co-pilot.",
+        "Using AI-assisted development, I've built and deployed multiple production apps from scratch: a stock analysis platform, AI chat assistants, automated trading systems, and more.",
+        "I'm not a traditional \"full-stack engineer\" — but I can move fast, validate ideas quickly, and ship things that actually work.",
+        "Let's connect if you're building with AI.",
       ],
-      cta: "Let's connect if you're building with AI.",
       viewWork: "VIEW WORK",
       contact: "CONTACT",
     },
@@ -75,13 +74,12 @@ export const translations = {
     // Hero
     hero: {
       role: "Vibe Coding 創作者",
-      tagline: "我相信在 AI 時代，能識別問題、交付方案比記住語法更重要。",
-      bullets: [
-        "透過 AI 協作，從零建立多個 production app",
-        "股票分析平台、AI 對話助手、自動化交易系統等",
-        "不是傳統「全端工程師」——但能快速迭代、交付實際運行的系統",
+      paragraphs: [
+        "我相信在 AI 時代，技術門檻不再是阻礙——真正的價值在於發現問題、設計方案、並把想法變成可用的產品。",
+        "透過 AI 協作，我從零開始建立了多個完整應用：包括股票分析平台、AI 對話助手、自動化交易系統等。",
+        "我不是傳統意義上的「全端工程師」——但我能快速驗證想法、迭代產品、並交付實際運行的系統。",
+        "如果你也在用 AI 創造，我很想和你交流。",
       ],
-      cta: "如果你也在用 AI 創造，歡迎交流 →",
       viewWork: "查看作品",
       contact: "聯絡我",
     },
