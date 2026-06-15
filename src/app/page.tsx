@@ -316,8 +316,19 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-gradient-to-r from-stone-800 via-blue-600 to-stone-600 bg-clip-text text-transparent">
             Raymond Lam
           </h1>
-          <p className="text-lg text-stone-500 font-light leading-relaxed mb-12 whitespace-pre-line">
-            {t.hero.subtitle}
+          <p className="text-lg text-stone-500 font-light leading-relaxed mb-6">
+            {t.hero.tagline}
+          </p>
+          <ul className="text-stone-600 space-y-2 mb-6 text-left max-w-md mx-auto">
+            {t.hero.bullets.map((b, i) => (
+              <li key={i} className="flex items-start">
+                <span className="text-blue-500 mr-2 mt-0.5">→</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm text-stone-500 font-light mb-10">
+            {t.hero.cta}
           </p>
           <div className="flex justify-center gap-6">
             <button
