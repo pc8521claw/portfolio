@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Raymond Lam | Web Developer",
-  description: "Full-Stack Web Developer - Building elegant web solutions with modern technologies",
+  title: "Raymond Lam | Vibe Coding Creator",
+  description: "Vibe Coding Creator - Building production apps with AI-assisted development",
 };
 
 export default function RootLayout({
