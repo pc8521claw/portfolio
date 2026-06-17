@@ -389,7 +389,7 @@ export default function Home() {
       <footer className="py-8 px-8 bg-stone-900 border-t border-stone-800">
         <div className="max-w-5xl mx-auto flex justify-between items-center text-sm text-stone-500">
           <p>© {new Date().getFullYear()} Raymond Lam. {t.footer.rights}</p>
-          <div className="flex gap-6">
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-6">
             <a
               href="https://github.com/pc8521claw"
               target="_blank"
