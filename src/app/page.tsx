@@ -147,7 +147,7 @@ function ProjectCard({ project, index, lang }: { project: typeof projects[0]; in
         <img 
           src={`/images/${imageFileName}.jpg`}
           alt={project.name}
-          className="w-full h-full object-contain rounded-lg transition-all duration-300 ring-2 ring-blue-300/60 shadow-[0_0_25px_rgba(59,130,246,0.20),0_0_60px_rgba(59,130,246,0.10)] hover:shadow-[0_0_35px_rgba(59,130,246,0.30),0_0_80px_rgba(59,130,246,0.15)] hover:ring-blue-400/80"
+          className="w-full h-full object-contain rounded transition-all duration-300"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
             if (target.src.endsWith('.jpg')) {
