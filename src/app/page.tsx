@@ -59,6 +59,11 @@ const projects = [
     tech: ["React", "Express", "better-sqlite3", "Ollama"],
     color: "#8B5CF6",
   },
+  {
+    name: "KMB Bus App",
+    tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind 4"],
+    color: "#059669",
+  },
 ];
 
 function useScrollReveal() {
@@ -158,6 +163,17 @@ function ProjectCard({ project, index, lang }: { project: typeof projects[0]; in
         {project.name === "Trading Platform" && (
           <a
             href="https://trading-platform-six-kappa.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            🌐 Demo 示範
+          </a>
+        )}
+        {project.name === "KMB Bus App" && (
+          <a
+            href="https://kmb-bus-app.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full hover:bg-blue-600 hover:text-white transition-colors"
