@@ -55,7 +55,7 @@ export const translations = {
     projectDescriptions: {
       "Trading Platform": "• Real-time HK/US stock quotes\n• Candlestick charts with technical indicators\n• 5 strategy backtests (MA, RSI, MACD, Bollinger, Momentum)\n• Multi-model price prediction\n• HK stock search",
       "Mind Notes": "• Local LLM chat with Ollama (privacy-first)\n• Smart notes system with tag categorization\n• LLM-powered auto knowledge base builder\n• FTS5 full-text search with trigram Chinese support\n• SQLite persistence with WAL protection",
-      "KMB Bus App": "• Real-time KMB bus route query\n• Auto-refresh ETA every 30 seconds (pause when tab hidden)\n• Full fare + service hours display\n• Detailed schedule table (89+ time slots)\n• Favorite routes bookmarking (localStorage)\n• No ads, no tracking",
+      "KMB Bus App": "• Real-time KMB, CTB bus route query\n• Auto-refresh ETA every 30 seconds\n• Bus stop location in Maps\n• Full fare + service hours display\n• Detailed schedule table\n• Favorite routes bookmarking (localStorage)\n• No ads, no tracking",
       "Minervini-Trading": "• Mark Minervini trend template screening\n• Price momentum analysis\n• Earnings growth identification\n• Technical breakout detection",
       "Futures-Signals": "• Daily futures trading signals\n• Options strategy recommendations\n• Trend analysis\n• Automated signal generation",
       "OpenClaw-Dashboard": "• Real-time session tracking\n• Token usage statistics\n• Cron jobs management\n• Hardware monitoring (CPU/RAM/disk)",
@@ -121,7 +121,7 @@ export const translations = {
     projectDescriptions: {
       "Trading Platform": "• 實時港股/美股報價\n• K線圖技術指標\n• 5種策略回測（MA、RSI、MACD、布林帶、動量）\n• 多模型價格預測\n• 港股搜索",
       "Mind Notes": "• 本地 LLM 對話（Ollama，私隱保障）\n• 智能筆記系統（標籤分類）\n• LLM 自動整理知識庫\n• FTS5 全文搜尋（trigram 支援中文）\n• SQLite 持久化（WAL 模式）",
-      "KMB Bus App": "• 即時 KMB 巴士路線查詢\n• 自動每 30 秒更新 ETA（Tab 隱藏暫停）\n• 全程車費 + 服務時間顯示\n• 詳細班次表（89+ 個時段）\n• 常用路線書籤（localStorage）\n• 無廣告、無追蹤",
+      "KMB Bus App": "• 即時 KMB、CTB 巴士路線查詢\n• 自動每 30 秒更新到站時間\n• 巴士站位置\n• 全程車費 + 服務時間顯示\n• 詳細班次表\n• 常用路線書籤（localStorage）\n• 無廣告、無追蹤",
       "Minervini-Trading": "• Mark Minervini 趨勢模板篩選\n• 股價動量分析\n• 盈利增長識別\n• 技術突破形態檢測",
       "Futures-Signals": "• 每日期貨交易信號\n• 選擇權策略建議\n• 趨勢分析\n• 自動化信號生成",
       "OpenClaw-Dashboard": "• 即時 Sessions 追蹤\n• Token 使用量統計\n• Cron Jobs 管理\n• 硬件監控（CPU/記憶體/磁盤）",
